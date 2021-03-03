@@ -1,22 +1,27 @@
 import tkinter as tk
 import time
+import keyboard
+import os
 from pynput.mouse import Button, Controller
-import pynput.keyboard
 import pywinauto
 
+
 #While Loop Running?
-running = True
+running = False
 
 #Declared Variable for further use
 activeText = "null"
+
+
 
 def NewWindow():
     global activeText
     global window2
 
+
     #Init Window2
     window2 = tk.Tk()
-    window2.geometry("600x350")
+    window2.geometry("600x600")
     window2.title("Minecraft Auto-Stuff Program | By: Finn")
     window2.resizable(False, False)
     window2.configure(bg="PaleGreen2")
@@ -25,8 +30,11 @@ def NewWindow():
     title_window2 = tk.Label(text="AUTO Commands", font=("Terminal", 20), foreground="white", background="grey",width=40, height=2)
 
     # BUTTONS - Commands
-    button_stripminer = tk.Button(text="STRIP MINER", font=("Terminal", 15), command=AUTO_Stripminer, width=40,height=2)
-    button_clicker = tk.Button(text="CLICKER", font=("Terminal", 15), command=AUTO_Clicker, width=40, height=2)
+    stripminer_Image = tk.PhotoImage(file="Photos/diamondPick.png")
+    button_stripminer = tk.Button(text="STRIP MINER", font=("Terminal", 15), command=AUTO_Stripminer, width=300,height=150, image=stripminer_Image, compound="right")
+
+    clicker_Image = tk.PhotoImage(file="Photos/pointer.png")
+    button_clicker = tk.Button(text="CLICKER", font=("Terminal", 15), command=AUTO_Clicker, width=300, height=150, image=clicker_Image, compound="right")
     button_tbd1 = tk.Button(text="tbd", font=("Terminal", 15), width=40, height=2)
     button_tbd2 = tk.Button(text="tbd", font=("Terminal", 15), width=40, height=2)
     button_tbd3 = tk.Button(text="tbd", font=("Terminal", 15), width=40, height=2)
@@ -39,12 +47,11 @@ def NewWindow():
     button_tbd2.pack(padx=2, pady=2)
     button_tbd3.pack(padx=2, pady=2)
 
-def StartMinecraft():
-    pywinauto.application.Application(backend="uia").start("")
+    window2.mainloop()
 
 def ChangeApplicationFocus():
     pass
-
+    pass
 
 def CurrentActiveWindow():
 
@@ -71,7 +78,6 @@ def CurrentActiveWindow():
 
 #Controller For Da Mouse :D
 mouse = Controller()
-keyboard = pynput.keyboard.Controller()
 
 def AUTO_Stripminer():
     global activeText
@@ -87,7 +93,6 @@ def AUTO_Stripminer():
         time.sleep(3)
         keyboard.press('w')
         mouse.press(button=Button.left)
-
 
 def AUTO_Clicker():
     global activeText
