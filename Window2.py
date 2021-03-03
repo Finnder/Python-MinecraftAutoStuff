@@ -6,7 +6,7 @@ from pynput.keyboard import Key, Listener
 import pywinauto
 
 #While Loop Running?
-running = False
+running = True
 
 #Declared Variable for further use
 activeText = "null"
@@ -39,6 +39,9 @@ def NewWindow():
     button_tbd1.pack(padx=2, pady=2)
     button_tbd2.pack(padx=2, pady=2)
     button_tbd3.pack(padx=2, pady=2)
+
+def StartMinecraft():
+    pywinauto.application.Application(backend="uia").start("")
 
 def ChangeApplicationFocus():
     pass
