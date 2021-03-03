@@ -3,7 +3,9 @@ import time
 import keyboard
 from pynput.mouse import Button, Controller
 from pynput.keyboard import Key, Listener
+import pywinauto
 
+#While Loop Running?
 running = False
 
 #Declared Variable for further use
@@ -37,6 +39,9 @@ def NewWindow():
     button_tbd1.pack(padx=2, pady=2)
     button_tbd2.pack(padx=2, pady=2)
     button_tbd3.pack(padx=2, pady=2)
+
+def ChangeApplicationFocus():
+    pass
 
 
 def CurrentActiveWindow():
