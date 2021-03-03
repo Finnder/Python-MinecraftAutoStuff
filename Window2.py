@@ -28,9 +28,9 @@ def NewWindow():
     # BUTTONS - Commands
     button_stripminer = tk.Button(text="STRIP MINER", font=("Terminal", 15), command=AUTO_Stripminer, width=40,height=2)
     button_clicker = tk.Button(text="CLICKER", font=("Terminal", 15), command=AUTO_Clicker, width=40, height=2)
-    button_tbd1 = tk.Button(text="tbd", font=("Terminal", 15), command=AUTO_Clicker, width=40, height=2)
-    button_tbd2 = tk.Button(text="tbd", font=("Terminal", 15), command=AUTO_Clicker, width=40, height=2)
-    button_tbd3 = tk.Button(text="tbd", font=("Terminal", 15), command=AUTO_Clicker, width=40, height=2)
+    button_tbd1 = tk.Button(text="tbd", font=("Terminal", 15), width=40, height=2)
+    button_tbd2 = tk.Button(text="tbd", font=("Terminal", 15), width=40, height=2)
+    button_tbd3 = tk.Button(text="tbd", font=("Terminal", 15), width=40, height=2)
 
     #PACKER - Finalization For Graphics
     title_window2.pack(pady=3)
