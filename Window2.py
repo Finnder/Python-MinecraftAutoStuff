@@ -1,8 +1,7 @@
 import tkinter as tk
 import time
-import keyboard
 from pynput.mouse import Button, Controller
-from pynput.keyboard import Key, Listener
+import pynput.keyboard
 import pywinauto
 
 #While Loop Running?
@@ -72,6 +71,7 @@ def CurrentActiveWindow():
 
 #Controller For Da Mouse :D
 mouse = Controller()
+keyboard = pynput.keyboard.Controller()
 
 def AUTO_Stripminer():
     global activeText
@@ -85,7 +85,7 @@ def AUTO_Stripminer():
     # While Loop For Stripminer
     while running:
         time.sleep(3)
-        keyboard.press(hotkey='w')
+        keyboard.press('w')
         mouse.press(button=Button.left)
 
 
