@@ -19,43 +19,46 @@ def NewWindow():
 
     # Init Window2
     window2 = tk.Tk()
+
     window2.geometry("600x600")
     window2.title("Minecraft Auto-Stuff Program | By: Finn")
     window2.resizable(False, False)
-    window2.configure(bg="PaleGreen2")
+
+    icon = tk.PhotoImage(file="Photos/icon.png")
+    window2.iconphoto(False, icon)
+
+    # BACKGROUND
+    background_Image = tk.PhotoImage(file="Photos/background_dirt.png")
+    bg_label = tk.Label(window2, image=background_Image)
+    bg_label.place(x=0, y=0)
 
     # TITLE
-    title_window2 = tk.Label(text="AUTO Commands", font=("Terminal", 23), foreground="white", background="grey", width=40, height=2)
+    title_window2 = tk.Label(text="AUTO Commands", font=("Terminal", 25), fg="white", bg="SeaGreen3", width=40, height=2)
 
     # AUTO Stripminer
     stripminer_Image = tk.PhotoImage(file="Photos/diamondPick.png")
-    button_stripminer = tk.Button(text="STRIP MINER", font=("Terminal", 15), command=AUTO_Stripminer, width=300,
-                                  height=110, image=stripminer_Image, compound="right")
+    button_stripminer = tk.Button(text="STRIP MINER", font=("Terminal", 15), bg="gray75",command=AUTO_Stripminer, width=300, height=100, image=stripminer_Image, compound="right")
 
     # AUTO Clicker
     clicker_Image = tk.PhotoImage(file="Photos/pointer.png")
-    button_clicker = tk.Button(text="CLICKER", font=("Terminal", 15), command=AUTO_Clicker, width=300, height=110,
-                               image=clicker_Image, compound="right")
+    button_clicker = tk.Button(text="CLICKER", font=("Terminal", 15), command=AUTO_Clicker, width=300, height=100, image=clicker_Image, compound="right")
 
     # AUTO Run
     runner_Image = tk.PhotoImage(file="Photos/runner.png")
-    button_run = tk.Button(text="RUNNER (W.I.P)", font=("Terminal", 15), command=AUTO_Run, width=300, height=110, image=runner_Image, compound="right")
+    button_run = tk.Button(text="RUNNER (W.I.P)", font=("Terminal", 15), bg="gray75", command=AUTO_Run, width=300, height=100, image=runner_Image, compound="right")
     willJump = tk.IntVar()
-    jumpCheck = tk.Checkbutton(text="Jump? (Character Jumps While Running [faster])", variable=willJump)  # Checkbox
+    jumpCheck = tk.Checkbutton(text="Jump? (Character Jumps While Running)", font=("Terminal", 10), bg="gray65", variable=willJump)  # Checkbox
 
     #TBD's
     button_tbd2 = tk.Button(text="tbd", font=("Terminal", 15), width=40, height=2)
     button_tbd3 = tk.Button(text="tbd", font=("Terminal", 15), width=40, height=2)
 
     # PACKER - Finalization For Graphics
-    title_window2.pack(pady=3)
-    button_stripminer.pack(padx=2, pady=2)
-    button_clicker.pack(padx=2, pady=2)
-    button_run.pack(padx=2, pady=2)
-    jumpCheck.pack(padx=2)
-
-    button_tbd2.pack(padx=2, pady=2)
-    button_tbd3.pack(padx=2, pady=2)
+    title_window2.pack()
+    button_stripminer.pack(padx=2, pady=3)
+    button_clicker.pack(padx=2, pady=3)
+    button_run.pack(padx=2, pady=3)
+    jumpCheck.pack(padx=1, pady=1)
 
     window2.mainloop()
 
